@@ -1,0 +1,73 @@
+'''
+PHYS-2964 AFM Analysis
+Project 2, MOKE data analysis, pseudo code
+Jerry Cheng
+'''
+import modules
+
+def read_file(file_name):
+	read the given data file
+	separate the points into four quadrums
+
+
+def find_intersection(quadrum1, quadrum2):
+	sort all points in both quadrums 
+		with respects to their distance to the axis
+	get the point closest to the axis on both side of the axis
+	find the expression that passes the two points
+		using the linear matrix system
+	find the intersection of the expression
+	return value
+
+def find_Hc(data):
+	use find_intersection to find the upperMr
+	use find_intersection to find the lowerMr
+
+	calculate the uncentered value with the upperMr and lowerMr
+	use the uncentered value as the uncertainty
+	return data
+
+def find_Mr(data):
+	use find_intersection to find the leftMr
+	use find_intersection to find the rightMr
+
+	calculate the uncentered value with the leftMr and rightMr
+	use the uncentered value as the uncertainty
+	return data
+
+def find_saturation(quadrum):
+
+	from the very end of the function #which is where function usually saturates
+		read in 6 points 
+		use the 6 points as a sequence to set up an "acceptable range"
+		if new point falls into the "acceptable range":
+			add point to the sequence
+			calculate new "acceptable range"
+		else:  #which means a dramatic change has occur
+			stop collecting more points
+
+		calculate the average of the collected sequence
+			use the average as the saturation value
+		calculate the standard deviation of the sequence
+			use the standard deviation as uncertainty
+
+		return data
+
+def find_Ms(data):
+	find the saturation in both the first and the forth quadrum
+
+	calculate the average of standard deviation as base of uncertainty
+	calculate the uncentered value
+		add this value to uncertainty
+		use this value to adjust the value of saturation
+
+	return data
+
+
+def main():
+	set up required output
+	format
+
+
+if __name__ == "__main__":
+	main()
